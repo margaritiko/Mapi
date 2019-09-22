@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             BackgroundImage="Back" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Mapi;assembly=Mapi" 
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin" 
+             x:Class="Mapi.Views.FollowingsPage">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Margin="40,100,40,40">
+                <local:CustomEntry x:Name="SearchEntry" Placeholder=" Search..." TextChanged="SearchForUsers"/>
+                
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <local:CustomSmallButton TextColor="White" Clicked="ShowFollowers" x:Name="FollowersButton" HorizontalOptions="Center" Text="Followers"/>
+                        <local:CustomSmallButton TextColor="White" Clicked="ShowFollowings" x:Name="FollowingsButton" HorizontalOptions="Center" Text="Following"/>
+                </StackLayout>
+                
+                <Frame CornerRadius="20" HasShadow="false" OutlineColor="White" Padding="6">
+                    <ListView IsPullToRefreshEnabled="True" HeightRequest="720" SeparatorColor="Silver" x:Name="UsersList" RowHeight="80" SeparatorVisibility="Default">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Tapped="Item_Clicked" BindingContext="{Binding Username}">
+                                    <StackLayout BackgroundColor="White">
+                                        <StackLayout Orientation="Horizontal">
+                                            <controls:CircleImage  Source="{Binding Picture}" Margin="5,10,10,0" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+                                            <StackLayout Margin="0,25,0,0">
+                                                <Label Text="{Binding Username}" LineBreakMode="MiddleTruncation" TextColor="Black" HorizontalOptions="Start" Style="Bold" Font="22" />
+                                                <!-- Not available :(( -->
+                                                <!--<Label Text="{Binding Percent}" TextColor="Black" HorizontalOptions="Start" Font="16"/>-->
+                                            </StackLayout>
+                                        <local:CustomSmallButton TextColor="#378bec" Clicked="AddButtonClicked" CommandParameter="{Binding Username}" x:Name="AddButton" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Font="70" Text="{Binding TypeOfAction}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </StackLayout>
+            <Image x:Name="OuterCircle" WidthRequest="100" Margin="10,20,0,0" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="Start" Source="Circle.png">
+            </Image>
+            <Image x:Name="InnerButtonMenu" Opacity="1" Margin="30,40,0,0" WidthRequest="60" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="Start" Source="OpenMenu.png">
+            </Image>
+            <Image x:Name="InnerButtonClose" Opacity="0" Margin="30,40,0,0" WidthRequest="60" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="Start" Source="CloseMenu.png">
+            </Image>
+            <!-- Middle -->
+            <Image x:Name="Followings" Opacity="0" Margin="140,140,0,0" Source="Followings.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="Start">
+            </Image>
+            <!-- Top -->
+            <Image x:Name="Settings" Opacity="0" Margin="180,50,0,0" Source="Settings.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="Start">
+            </Image>
+            <!-- Bottom -->
+            <Image x:Name="UserMap" Opacity="0" Margin="50,180,0,0" Source="Map.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="Start">
+            </Image>
+            
+            <Image x:Name="PhotoCircle" WidthRequest="100" Margin="0,20,10,0" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="End" Source="Circle.png">
+            </Image>
+            
+            <controls:CircleImage 
+            x:Name="PhotoContent"
+            Aspect="AspectFill" 
+            HeightRequest="80" WidthRequest="80" 
+            Margin="0,30,20,0" 
+            VerticalOptions="Start" HorizontalOptions="End"/>      
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

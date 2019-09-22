@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+    x:Class="Mapi.Views.MainMap"
+    Title="MainMap">
+    <ContentPage.Content>
+            <Grid>  
+                <maps:Map x:Name="map"
+                      InitialCameraUpdate="55.71, 37.61, 8.4, 30, 0"
+                      VerticalOptions="FillAndExpand" Margin="0,80,0,0"/> 
+            
+                <Label x:Name="Username" TextColor="Black" Margin="0,40,0,0" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large"/>
+            
+                <Image x:Name="OuterCircle" WidthRequest="100" Margin="10,20,0,0" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="Start" Source="Circle.png"></Image>
+                <Image x:Name="InnerButtonMenu" Opacity="1" Margin="30,40,0,0" WidthRequest="60" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="Start" Source="OpenMenu.png"></Image>
+                <Image x:Name="InnerButtonClose" Opacity="0" Margin="30,40,0,0" WidthRequest="60" HeightRequest="60" VerticalOptions="Start" HorizontalOptions="Start" Source="CloseMenu.png"></Image>
+                <!-- Middle -->
+                <Image x:Name="Followings" Opacity="0" Margin="140,140,0,0" Source="Followings.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="Start"></Image>
+                <!-- Top -->
+                <Image x:Name="Settings" Opacity="0" Margin="180,50,0,0" Source="Settings.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="Start"></Image>
+                <!-- Bottom -->
+                <Image x:Name="UserMap" Opacity="0" Margin="50,180,0,0" Source="Map.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="Start"></Image>
+            
+             </Grid>
+    </ContentPage.Content>
+</ContentPage>

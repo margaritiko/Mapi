@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Mapi;assembly=Mapi" x:Class="Mapi.Views.CreateUsernamePage" Title="Create username">
+    <ContentPage.Content>
+        <StackLayout x:Name="MasterLayout">
+            <StackLayout x:Name="LogoStack" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Image x:Name="LoginIcon" Source="Sign.png" />
+            </StackLayout>
+            <StackLayout x:Name="LogoEntriesStack" Spacing="6" VerticalOptions="StartAndExpand" Margin="0,-90,0,0">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>40,0,40,0</OnIdiom.Phone>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                <local:CustomEntry x:Name="Username" Placeholder=" Username"/>
+                <local:CustomRoundedButton Text="OK" Clicked="OnOKButtonClicked" />
+                <Label x:Name="messageLabel" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

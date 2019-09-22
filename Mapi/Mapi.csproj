@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="3.0.4" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.6-beta" />
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Azure.CosmosDB.Table" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.2.2" />
+    <PackageReference Include="Plugin.Permissions" Version="4.0.4-beta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Views\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Interactors\" />
+    <Folder Include="Presenter\" />
+    <Folder Include="Router\" />
+    <Folder Include="Interactors\LineInteractor\" />
+    <Folder Include="Views\Pages\" />
+    <Folder Include="Views\UIElements\" />
+    <Folder Include="Interactors\GeometryInteractor\" />
+    <Folder Include="Interactors\ProcessingInteractor\" />
+    <Folder Include="Interactors\DataInteractor\" />
+    <Folder Include="Interactors\UserDataInteractor\" />
+    <Folder Include="Interactors\AuthenticateIteractor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Menu.cs" />
+    <Compile Remove="Models\CustomRectangularMenuButton.cs" />
+    <Compile Remove="Views\MapiMasterDetailPage.xaml.cs" />
+    <Compile Remove="Variables.cs" />
+    <Compile Remove="Data\CoordinatesForPolygon.cs" />
+    <Compile Remove="Models\AssemblyInfo.cs" />
+    <Compile Remove="Models\CameraInterface.cs" />
+    <Compile Remove="Models\FileFormatEnum.cs" />
+    <Compile Remove="BackendModels\TodoItem.cs" />
+    <Compile Remove="Models\ListItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\MapiMasterDetailPage.xaml" />
+    <EmbeddedResource Remove="Views\PopUp.xaml" />
+    <EmbeddedResource Remove="Views\StyleMap %28copy%29.xaml" />
+    <EmbeddedResource Remove="Views\RegistrationPage %28copy%29.xaml" />
+  </ItemGroup>
+</Project>
